@@ -1,0 +1,26 @@
+;	local stuff removed
+
+[color]
+	ui = true
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[core]
+	whitespace=fix,-indent-with-non-tab,-indent-with-tab,trailing-space,cr-at-eol
+;	autocrlf = input
+	safecrlf = true
+[alias]
+	df = !git diff --no-prefix && git diff --staged --no-prefix
+	clear = reset --hard
+	co = checkout
+ 	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[branch]
+	autosetuprebase = always

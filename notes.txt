@@ -4,7 +4,10 @@ sed -i 's:info\.jpg:icons/info\.jpg:g' path/to/file.php
 Трие всички редове, отговарящи на регулярния израз:
 sed -i '/Invalid user/d' /var/log/messages
 
-rsync -avz martin@mmartinov.com:/var/www/drupal/sites/default/files /var/www/drupal/sites/default
+git status -s | awk '{print $2} ' | xargs rm
+
+rsync -avz martin@mmartinov.com:/var/www/drupal/sites/default/files sites/default
+rsync -avz martin@mmartinov.com:/var/www/drupal/sites/default/files/ sites/default/files
 
 find /home/bruno -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# SVN post-commit hook used to update remote working copy.
+
+#REPOS="$1"
+#REV="$2"
+
+SSH="/usr/bin/ssh"
+
+$SSH -l <username> <hostname> 'cd /var/www/project && svn up' > /var/svn/project-up.log 2>&1

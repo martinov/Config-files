@@ -2,6 +2,9 @@
 
 [color]
 	ui = true
+	diff = auto
+	status = auto
+	branch = auto
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
@@ -12,15 +15,22 @@
 	whitespace=fix,-indent-with-non-tab,-indent-with-tab,trailing-space,cr-at-eol
 ;	autocrlf = input
 	safecrlf = true
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
 [alias]
 	df = !git diff --no-prefix && git diff --staged --no-prefix
 	clear = reset --hard
 	co = checkout
- 	ci = commit
+	ci = commit
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
 	dump = cat-file -p
+	pull = pull --stat
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [branch]
 	autosetuprebase = always

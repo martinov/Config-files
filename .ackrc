@@ -1,2 +1,3 @@
---type-set=drupal=.module,.inc,.info,.install
+--type-set=drupal=.module,.inc,.info,.install,.profile
+--type-set=js=.js,.json
 --smart-case

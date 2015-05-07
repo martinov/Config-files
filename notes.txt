@@ -9,10 +9,10 @@ git status -s | awk '{print $2} ' | xargs rm
 rsync -avz martin@mmartinov.com:/var/www/drupal/sites/default/files sites/default
 rsync -avz martin@mmartinov.com:/var/www/drupal/sites/default/files/ sites/default/files
 
+mysqldump dbname | bzip2 -c > dbname_$(date +%Y-%m-%d-%H%M%S).sql.bz2
+
 find /home/bruno -type f -exec sed -i 's/ugly/beautiful/g' {} \;
-
 find . -type d -user fileowner -exec chmod 0755 {} \;
-
 find . -type f -name 'settings.php' | xargs sed -i 's/oldpass/newpass/'
 
 chmod -R g+rwX sites/default/files/

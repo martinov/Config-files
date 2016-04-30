@@ -1,7 +1,10 @@
-;	local stuff removed
-
+[user]
+	name = John Smith
+	email = user@example.com
+[github]
+	user = username
+	token = githubtoken
 [color]
-	ui = true
 	diff = auto
 	status = auto
 	branch = auto
@@ -34,3 +37,5 @@
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [branch]
 	autosetuprebase = always
+[push]
+	default = simple

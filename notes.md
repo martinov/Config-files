@@ -65,3 +65,13 @@ GPS
 Presentation mode
 
     $ xrandr --output VGA1 --right-of LVDS1 # or --below
+
+
+## Docker
+https://blog.radiumz.org/en/node/25
+
+$ docker run -e MYSQL_RANDOM_ROOT_PASSWORD=1 -p 3306:3306 --name mariadb1 -v /home/martin/docker/mariadb1:/var/lib/mysql --restart=always -d mariadb
+$ docker logs mariadb1 # look for "GENERATED ROOT PASSWORD"
+$ docker exec mariadb1 printenv
+$ docker exec -it mariadb1 mysql -u root -p$MYSQLPWD -> create database
+$ docker exec -i mariadb1 mysql -u root -p$MYSQLPWD d7_klimsyst < d7_klimsyst-2016-05-25-18.38.05.sql
